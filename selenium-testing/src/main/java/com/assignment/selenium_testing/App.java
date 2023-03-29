@@ -1,0 +1,63 @@
+package com.assignment.selenium_testing;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class App 
+{
+    public static void main( String[] args ) throws InterruptedException
+    {
+    	System.setProperty("webdriver.chrome.driver","C:\\Users\\Kavit\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+    	   ChromeOptions options = new ChromeOptions();
+    	   options.addArguments("--remote-allow-origins=*");
+    	   WebDriver driver = new ChromeDriver(options);
+    	   System.out.println("Selenium Test Scripts Execution Started..");
+    	   //Open Browser and enter the Url
+           driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+           driver.get("http://localhost:8080/addressbook/");
+           //Click on new contact buttons
+           
+           driver.findElement(By.className("v-button")).click();
+           Thread.sleep(2000);
+           //Enter First name
+           
+           driver.findElement(By.id("gwt-uid-5")).sendKeys("Geetha");
+           Thread.sleep(2000);
+           
+           //Enter Second name
+           
+           
+          driver.findElement(By.id("gwt-uid-7")).sendKeys("B");
+          Thread.sleep(2000);
+           
+          // Enter Mobile num
+          
+          driver.findElement(By.id("gwt-uid-9")).sendKeys("99999");
+          Thread.sleep(2000);
+           
+          //Enter E-mail
+          
+          driver.findElement(By.id("gwt-uid-11")).sendKeys("geetha@gmail.com");
+          Thread.sleep(2000);
+          
+           //Enter DOB
+          
+          driver.findElement(By.id("gwt-uid-13")).sendKeys("5/6/2003,");
+          
+          Thread.sleep(2000);
+           //click on save the information
+           
+          driver.findElement(By.className("v-button-primary")).click();
+        
+          Thread.sleep(2000);
+          driver.quit();
+        
+          
+          System.out.println("Script executed successfully");
+           
+    }
+}

@@ -1,0 +1,22 @@
+package com.assignment.selenium_testing;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	System.setProperty("webdriver.chrome.driver","C:\\Users\\Kavit\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    	   ChromeOptions options = new ChromeOptions();
+    	   options.addArguments("--remote-allow-origins=*");
+    	   WebDriver driver = new ChromeDriver(options);
+    	   System.out.println("Selenium Test Scripts Execution Started..");
+    	   //Open Browser and enter the Url
+           driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+           driver.get("http://localhost:8080/addressbook/");
+    }
+}

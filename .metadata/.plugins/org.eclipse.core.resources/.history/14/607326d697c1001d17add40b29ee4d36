@@ -1,0 +1,14 @@
+package com.assignment.selenium_testing;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	System.setProperty("webdriver.chrome.driver","C:\\Users\\Kavit\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        
+    }
+}
